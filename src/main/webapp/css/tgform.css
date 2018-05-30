@@ -1,0 +1,222 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+img{
+	width: 100%;
+	display: block;
+}
+.bj{
+	width: 100%;
+	background: url(img/19_Bg.jpg);
+	background-size:100% auto ;
+	background-color: rgb(237,240,248);
+	background-position: center center;
+	background-repeat: repeat; 
+	overflow-y: auto; 
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.body{
+	width: 100%;
+	overflow: hidden;
+}
+.body_big{
+	width: 100%;
+	position: relative;
+}
+.body_big{
+	min-width: 500px;
+}
+.bann_box{
+	position: absolute;
+	top: 40%;
+	left: 2%;
+	color: #fff;
+	font-size: 14px;
+}
+.bann_box .bann_big{
+	font-size: 30px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.body_form{
+	width: 100%;
+	background-color:#ffffff;
+}
+.blue_text{
+	color:#335476;
+	font-size: 16px;
+	text-align: center;
+	line-height: 28px;
+	font-weight: bold;
+}
+.red_text{
+	color:#ff0000;
+	font-size: 16px;
+	text-align: center;
+	line-height: 28px;
+	font-weight: bold;
+}
+form{
+	overflow: hidden;
+}
+.questions{
+	padding: 10px 5%;
+	overflow: hidden;
+}
+form div.xuan{
+	width: 50%;
+	float: left;
+	min-height: 28px;
+	line-height: 28px;
+}
+.title{
+	text-align: left;	
+}
+form label{
+	font-size: 14px;
+	padding-left: 5px;
+	vertical-align: middle;
+	font-weight: normal;
+}
+form input{
+	vertical-align: middle;
+	outline: none;
+}
+.questions:hover{
+	background-color:#ffffff ;
+}
+input.inptext{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	width: 95%;
+	margin-top: 5px;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+.xuxian{
+	width: 94%;
+	margin: 0 auto;
+	border-top: 1px dotted #ffffff ;
+}
+.liucheng{
+	width: 90%;
+	margin: 0 auto;
+	padding: 15px 0;
+}
+select{
+	width: 80%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	color: #666;
+}
+.zstp {
+	width: 90%;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	padding-top: 10px;
+}
+.zstp img{
+	width: 50%;
+	padding: 10px 4%;
+	box-sizing: border-box;
+	float: left;
+}
+.zstp p{
+	text-align: center;
+	color: #666666;
+	font-size: 14px;
+}
+.inpname{
+	width: 40% !important;
+	background: url(../img/name.png) 7px 5px no-repeat;
+	border: 1px solid #A9A9A9;
+	background-size:16px 16px ;
+	background-color: #fff;
+	padding-left: 30px !important;
+}
+.inpphone{
+	background: url(../img/phon.png) 7px 5px no-repeat;
+	border: 1px solid #A9A9A9;
+	background-size:16px 16px ;
+	background-color: #fff;
+	padding-left: 30px !important;	
+}
+.inpdate{
+	background: url(../img/rili.png) 7px 5px no-repeat;
+	border: 1px solid #A9A9A9;
+	background-size:16px 16px ;
+	background-color: #fff;
+	padding-left: 30px !important;		
+}
+@media only screen and (min-width: 800px) and (max-width: 10000px) {
+	.body{max-width: 800px;margin: 20px auto;}
+	form div.xuan{width: 25%;}
+	.zstp img{width: 25%; padding: 10px 1%;}
+	input.inptext{width: 80%;}
+	.bann_box .bann_big{font-size: 36px;}
+	.bann_box{font-size: 16px;}
+}
+.guoqi{
+	float: left;
+	border: 1px solid #A9A9A9;
+	font-size: 14px;
+	padding: 1px;
+}
+.guoqi img{
+	width: 26px;
+	height: auto;
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 2px;
+}
+#city{
+	float: left;
+	margin-left: 10px;
+}
+#city select{
+	width: 80px;
+}
+.hui_text{
+	font-size: 14px;
+	color: #666666;
+}
+.kcdate input{
+	text-align: left;
+}
+.zhanshitu{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.zhanshitu img{
+	float: left;
+	width: 30%;
+	padding: 20px 1%;
+}
+#button{
+	width: 90%;
+	background: #D61518;
+	color: #fff;
+	outline: none;
+	border: none;
+	height: 36px;
+	display:block;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	border-radius:4px;
+}
+.xiaocuo{
+	font-size: 12px;
+	color: #DA2824;
+}
+.cutitle{
+	text-align: left;
+	font-size: 15px;
+	color: #D61518;
+}

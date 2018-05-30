@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.SmStartupintentionMapper">
+	<resultMap id="BaseResultMap" type="com.entity.SmStartupintention">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="customer_id" property="customerId" jdbcType="VARCHAR" />
+		<result column="source" property="source" jdbcType="VARCHAR" />
+		<result column="project" property="project" jdbcType="VARCHAR" />
+		<result column="movedReason" property="movedreason" jdbcType="VARCHAR" />
+		<result column="guestType" property="guesttype" jdbcType="VARCHAR" />
+		<result column="otherGuestType" property="otherguesttype"
+			jdbcType="VARCHAR" />
+		<result column="startUpDate" property="startupdate" jdbcType="VARCHAR" />
+		<result column="budget" property="budget" jdbcType="VARCHAR" />
+		<result column="fundsSource" property="fundssource" jdbcType="VARCHAR" />
+		<result column="startUpReason" property="startupreason"
+			jdbcType="VARCHAR" />
+		<result column="decisionMaker" property="decisionmaker"
+			jdbcType="VARCHAR" />
+		<result column="hasSetUpResExp" property="hassetupresexp"
+			jdbcType="CHAR" />
+		<result column="hasSetUpExp" property="hassetupexp" jdbcType="CHAR" />
+		<result column="hasShop" property="hasshop" jdbcType="CHAR" />
+		<result column="detailsWantToKnow" property="detailswanttoknow"
+			jdbcType="VARCHAR" />
+		<result column="industry" property="industry" jdbcType="VARCHAR" />
+		<result column="industryExperience" property="industryexperience"
+			jdbcType="VARCHAR" />
+		<result column="customerName" property="customername" jdbcType="VARCHAR" />
+		<result column="age" property="age" jdbcType="VARCHAR" />
+		<result column="shopLocation" property="shoplocation" jdbcType="VARCHAR" />
+		<result column="province_id" property="provinceId" jdbcType="VARCHAR" />
+		<result column="city_id" property="cityId" jdbcType="VARCHAR" />
+		<result column="area_id" property="areaId" jdbcType="VARCHAR" />
+		<result column="phone" property="phone" jdbcType="VARCHAR" />
+		<result column="wechat" property="wechat" jdbcType="VARCHAR" />
+		<result column="investigateDate" property="investigatedate"
+			jdbcType="DATE" />
+		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
+		<result column="create_by" property="createBy" jdbcType="VARCHAR" />
+		<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+		<result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+		<result column="del_flag" property="delFlag" jdbcType="CHAR" />
+		<result column="otherProject" property="otherProject" jdbcType="VARCHAR" />
+		<result column="estimatedArea" property="estimatedArea" jdbcType="VARCHAR" />
+		<result column="isSupportIdea" property="isSupportIdea" jdbcType="VARCHAR" />
+		<result column="gender" property="gender" jdbcType="CHAR" />
+		<result column="customer_name" property="customerName" jdbcType="VARCHAR" />
+		<result column="province_name" property="provinceName" jdbcType="VARCHAR" />
+	    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+		<result column="area_name" property="areaName" jdbcType="VARCHAR" />
+		<result column="source_name" property="sourceName" jdbcType="VARCHAR" />
+		 <result column="create_by_name" property="createByName" jdbcType="VARCHAR" />
+		<result column="update_by_name" property="updateByName" jdbcType="VARCHAR" />
+		
+	</resultMap>
+
+	<resultMap id="smCustomerMap" type="com.entity.SmCustomer">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="customerName" property="customername" jdbcType="VARCHAR" />
+		<result column="sex" property="sex" jdbcType="CHAR" />
+		<result column="age" property="age" jdbcType="INTEGER" />
+		<result column="customerType" property="customertype" jdbcType="VARCHAR" />
+		<result column="attitude" property="attitude" jdbcType="VARCHAR" />
+		<result column="province_id" property="provinceId" jdbcType="VARCHAR" />
+		<result column="city_id" property="cityId" jdbcType="VARCHAR" />
+		<result column="area_id" property="areaId" jdbcType="VARCHAR" />
+		<result column="phone" property="phone" jdbcType="VARCHAR" />
+		<result column="project" property="project" jdbcType="VARCHAR" />
+		<result column="customerSource" property="customersource"
+			jdbcType="VARCHAR" />
+		<result column="in_date" property="inDate" jdbcType="DATE" />
+		<result column="firstContactTime" property="firstcontacttime"
+			jdbcType="TIMESTAMP" />
+		<result column="lastContactTime" property="lastcontacttime"
+			jdbcType="TIMESTAMP" />
+		<result column="customerLevel" property="customerlevel"
+			jdbcType="VARCHAR" />
+		<result column="IDNumber" property="idnumber" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="team_id" property="teamId" jdbcType="VARCHAR" />
+		<result column="teamLeader" property="teamleader" jdbcType="VARCHAR" />
+		<result column="seller_id" property="sellerId" jdbcType="VARCHAR" />
+		<result column="office_id" property="officeId" jdbcType="VARCHAR" />
+		<result column="negotiator" property="negotiator" jdbcType="VARCHAR" />
+		<result column="customerServiceRep" property="customerservicerep"
+			jdbcType="VARCHAR" />
+		<result column="customerServiceLeader" property="customerserviceleader"
+			jdbcType="VARCHAR" />
+		<result column="technologist" property="technologist" jdbcType="VARCHAR" />
+		<result column="constructionManager" property="constructionmanager"
+			jdbcType="VARCHAR" />
+		<result column="contractLevel" property="contractlevel"
+			jdbcType="VARCHAR" />
+		<result column="price" property="price" jdbcType="DECIMAL" />
+		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
+		<result column="create_by" property="createBy" jdbcType="VARCHAR" />
+		<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+		<result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+		<result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
+		<result column="customerSource2" property="customersource2"
+			jdbcType="VARCHAR" />
+		<result column="assign_customer_date" property="assignCustomerDate"
+			jdbcType="DATE" />
+		<result column="isFullPayment" property="isfullpayment"
+			jdbcType="CHAR" />
+		<result column="wechat" property="wechat" jdbcType="VARCHAR" />
+		<result column="sourceProject" property="sourceproject"
+			jdbcType="CHAR" />
+		<result column="clientType" property="clienttype" jdbcType="VARCHAR" />
+		<result column="yuTime" property="yutime" jdbcType="TIMESTAMP" />
+		<result column="gotStatus" property="gotstatus" jdbcType="VARCHAR" />
+		<result column="invalidcause" property="invalidcause" jdbcType="VARCHAR" />
+		<result column="fb_stuars" property="fbStuars" jdbcType="VARCHAR" />
+		<result column="comeTime" property="cometime" jdbcType="TIMESTAMP" />
+		<result column="chengTime" property="chengtime" jdbcType="TIMESTAMP" />
+		<result column="eliteTeam" property="eliteteam" jdbcType="VARCHAR" />
+		<result column="division" property="division" jdbcType="VARCHAR" />
+
+	</resultMap>
+
+    <resultMap id="OaNotifyMap" type="com.entity.OaNotify" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="CHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="files" property="files" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="CHAR" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="CHAR" />
+  </resultMap>
+ 
+  <resultMap id="OaNotifyRecordMap" type="com.entity.OaNotifyRecord" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="oa_notify_id" property="oaNotifyId" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="read_flag" property="readFlag" jdbcType="CHAR" />
+    <result column="read_date" property="readDate" jdbcType="DATE" />
+  </resultMap>
+
+	<sql id="Base_SmCustomer_List">
+		id, name, customerName, sex, age, customerType, attitude,
+		province_id,
+		city_id, area_id,
+		phone, project, customerSource, in_date,
+		firstContactTime, lastContactTime,
+		customerLevel,
+		IDNumber, status,
+		team_id, teamLeader, seller_id, office_id, negotiator,
+		customerServiceRep,
+		customerServiceLeader, technologist,
+		constructionManager, contractLevel, price, 
+		 remarks, 
+		create_by, create_date, update_by,
+		update_date, del_flag,
+		customerSource2, 
+		assign_customer_date, isFullPayment,
+		wechat, sourceProject, clientType, yuTime, gotStatus,
+		invalidcause,
+		fb_stuars,
+		comeTime, chengTime, eliteTeam, division
+	</sql>
+
+
+	<sql id="Base_Column_List">
+		id, name, customer_id, source, project, movedReason,
+		guestType,
+		otherGuestType, startUpDate,
+		budget, fundsSource,
+		startUpReason, decisionMaker, hasSetUpResExp,
+		hasSetUpExp, hasShop,
+		detailsWantToKnow, industry, industryExperience, customerName, age,
+		shopLocation,
+		province_id, city_id, area_id, phone, wechat,
+		investigateDate,
+		remarks, create_by,
+		create_date, update_by,
+		update_date, del_flag
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from sm_startupintention
+		where id = #{id,jdbcType=VARCHAR}
+	</select>
+	<select id="nameSelect" resultType="com.entity.Area"
+		parameterType="java.lang.String">
+		select
+		sa.id AS "id",
+		sa.parent_id AS "parentId",
+		sa.parent_ids AS
+		"parentIds",
+		sa.name AS "name",
+		sa.sort AS "sort",
+		sa.code AS "code",
+		sa.type AS "type",
+		sa.create_by AS "createBy",
+		sa.create_date AS
+		"createDate",
+		sa.update_by AS "updateBy",
+		sa.update_date AS
+		"updateDate",
+		sa.remarks AS "remarks",
+		sa.del_flag AS "delFlag"
+		from
+		sys_area sa
+		where
+		1=1
+		<if test="areaId !=null  ">
+			AND sa.name like #{areaId}
+			AND sa.parent_id = '1'
+		</if>
+	</select>
+	<select id="nameSelectCity" resultType="com.entity.Area"
+		parameterType="java.lang.String">
+		select
+		sa.id AS "id",
+		sa.parent_id AS "parentId",
+		sa.parent_ids AS
+		"parentIds",
+		sa.name AS "name",
+		sa.sort AS "sort",
+		sa.code AS "code",
+		sa.type AS "type",
+		sa.create_by AS "createBy",
+		sa.create_date AS
+		"createDate",
+		sa.update_by AS "updateBy",
+		sa.update_date AS
+		"updateDate",
+		sa.remarks AS "remarks",
+		sa.del_flag AS "delFlag"
+		from
+		sys_area sa
+		where
+		1=1
+		<if test="areaId !=null  ">
+		AND sa.name like #{areaId}
+
+		</if>
+		<if test="cityId !=null  ">
+			AND sa.parent_id = #{cityId}
+
+		</if>
+	</select>
+
+	<!-- 查询手机号是否有 -->
+	<select id="selectPhone" resultType="java.lang.Integer">
+		SELECT
+		COUNT(1)
+		FROM
+		sm_startupintention a
+		WHERE a.phone = #{phone}
+	</select>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from
+		sm_startupintention
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert" parameterType="com.entity.SmStartupintention">
+		insert into
+		sm_startupintention (id, name, customer_id,
+		source, project,
+		movedReason,
+		guestType, otherGuestType, startUpDate,
+		budget,
+		fundsSource, startUpReason,
+		decisionMaker, hasSetUpResExp, hasSetUpExp,
+		hasShop, detailsWantToKnow, industry,
+		industryExperience, customerName,
+		age,
+		shopLocation, province_id, city_id,
+		area_id, phone, wechat,
+		investigateDate, remarks, create_by,
+		create_date, update_by,
+		update_date,
+		del_flag,otherProject,estimatedArea,isSupportIdea,gender)
+		values (#{id,jdbcType=VARCHAR},
+		#{name,jdbcType=VARCHAR},
+		#{customerId,jdbcType=VARCHAR},
+		#{source,jdbcType=VARCHAR}, #{project,jdbcType=VARCHAR},
+		#{movedreason,jdbcType=VARCHAR},
+		#{guesttype,jdbcType=VARCHAR},
+		#{otherguesttype,jdbcType=VARCHAR},
+		#{startupdate,jdbcType=VARCHAR},
+		#{budget,jdbcType=VARCHAR}, #{fundssource,jdbcType=VARCHAR},
+		#{startupreason,jdbcType=VARCHAR},
+		#{decisionmaker,jdbcType=VARCHAR},
+		#{hassetupresexp,jdbcType=CHAR},
+		#{hassetupexp,jdbcType=CHAR},
+		#{hasshop,jdbcType=CHAR}, #{detailswanttoknow,jdbcType=VARCHAR},
+		#{industry,jdbcType=VARCHAR},
+		#{industryexperience,jdbcType=VARCHAR},
+		#{customername,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR},
+		#{shoplocation,jdbcType=VARCHAR}, #{provinceId,jdbcType=VARCHAR},
+		#{cityId,jdbcType=VARCHAR},
+		#{areaId,jdbcType=VARCHAR},
+		#{phone,jdbcType=VARCHAR}, #{wechat,jdbcType=VARCHAR},
+		#{investigatedate,jdbcType=DATE}, #{remarks,jdbcType=VARCHAR},
+		#{createBy,jdbcType=VARCHAR},
+		#{createDate,jdbcType=TIMESTAMP},
+		#{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=TIMESTAMP},
+		#{delFlag,jdbcType=CHAR},#{otherProject,jdbcType=VARCHAR},
+		#{estimatedArea,jdbcType=VARCHAR},#{isSupportIdea,jdbcType=VARCHAR},
+		#{gender,jdbcType=CHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.entity.SmStartupintention">
+		insert into sm_startupintention
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="customerId != null">
+				customer_id,
+			</if>
+			<if test="source != null">
+				source,
+			</if>
+			<if test="project != null">
+				project,
+			</if>
+			<if test="movedreason != null">
+				movedReason,
+			</if>
+			<if test="guesttype != null">
+				guestType,
+			</if>
+			<if test="otherguesttype != null">
+				otherGuestType,
+			</if>
+			<if test="startupdate != null">
+				startUpDate,
+			</if>
+			<if test="budget != null">
+				budget,
+			</if>
+			<if test="fundssource != null">
+				fundsSource,
+			</if>
+			<if test="startupreason != null">
+				startUpReason,
+			</if>
+			<if test="decisionmaker != null">
+				decisionMaker,
+			</if>
+			<if test="hassetupresexp != null">
+				hasSetUpResExp,
+			</if>
+			<if test="hassetupexp != null">
+				hasSetUpExp,
+			</if>
+			<if test="hasshop != null">
+				hasShop,
+			</if>
+			<if test="detailswanttoknow != null">
+				detailsWantToKnow,
+			</if>
+			<if test="industry != null">
+				industry,
+			</if>
+			<if test="industryexperience != null">
+				industryExperience,
+			</if>
+			<if test="customername != null">
+				customerName,
+			</if>
+			<if test="age != null">
+				age,
+			</if>
+			<if test="shoplocation != null">
+				shopLocation,
+			</if>
+			<if test="provinceId != null">
+				province_id,
+			</if>
+			<if test="cityId != null">
+				city_id,
+			</if>
+			<if test="areaId != null">
+				area_id,
+			</if>
+			<if test="phone != null">
+				phone,
+			</if>
+			<if test="wechat != null">
+				wechat,
+			</if>
+			<if test="investigatedate != null">
+				investigateDate,
+			</if>
+			<if test="remarks != null">
+				remarks,
+			</if>
+			<if test="createBy != null">
+				create_by,
+			</if>
+			<if test="createDate != null">
+				create_date,
+			</if>
+			<if test="updateBy != null">
+				update_by,
+			</if>
+			<if test="updateDate != null">
+				update_date,
+			</if>
+			<if test="delFlag != null">
+				del_flag,
+			</if>
+			<if test="otherProject != null">
+				otherProject,
+			</if><if test="estimatedArea != null">
+				estimatedArea,
+			</if><if test="isSupportIdea != null">
+				isSupportIdea,
+			</if><if test="gender != null">
+				gender,
+			</if>
+			<if test="customerName != null">
+				customer_name,
+			</if>
+			<if test="provinceName != null">
+				province_name,
+			</if>
+			<if test="cityName != null">
+				city_name,
+			</if>
+			<if test="areaName != null">
+				area_name,
+			</if>
+			<if test="sourceName != null">
+				source_name,
+			</if>
+			<if test="createByName != null">
+				create_by_name,
+			</if>
+			<if test="updateByName != null">
+				update_by_name,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="customerId != null">
+				#{customerId,jdbcType=VARCHAR},
+			</if>
+			<if test="source != null">
+				#{source,jdbcType=VARCHAR},
+			</if>
+			<if test="project != null">
+				#{project,jdbcType=VARCHAR},
+			</if>
+			<if test="movedreason != null">
+				#{movedreason,jdbcType=VARCHAR},
+			</if>
+			<if test="guesttype != null">
+				#{guesttype,jdbcType=VARCHAR},
+			</if>
+			<if test="otherguesttype != null">
+				#{otherguesttype,jdbcType=VARCHAR},
+			</if>
+			<if test="startupdate != null">
+				#{startupdate,jdbcType=VARCHAR},
+			</if>
+			<if test="budget != null">
+				#{budget,jdbcType=VARCHAR},
+			</if>
+			<if test="fundssource != null">
+				#{fundssource,jdbcType=VARCHAR},
+			</if>
+			<if test="startupreason != null">
+				#{startupreason,jdbcType=VARCHAR},
+			</if>
+			<if test="decisionmaker != null">
+				#{decisionmaker,jdbcType=VARCHAR},
+			</if>
+			<if test="hassetupresexp != null">
+				#{hassetupresexp,jdbcType=CHAR},
+			</if>
+			<if test="hassetupexp != null">
+				#{hassetupexp,jdbcType=CHAR},
+			</if>
+			<if test="hasshop != null">
+				#{hasshop,jdbcType=CHAR},
+			</if>
+			<if test="detailswanttoknow != null">
+				#{detailswanttoknow,jdbcType=VARCHAR},
+			</if>
+			<if test="industry != null">
+				#{industry,jdbcType=VARCHAR},
+			</if>
+			<if test="industryexperience != null">
+				#{industryexperience,jdbcType=VARCHAR},
+			</if>
+			<if test="customername != null">
+				#{customername,jdbcType=VARCHAR},
+			</if>
+			<if test="age != null">
+				#{age,jdbcType=VARCHAR},
+			</if>
+			<if test="shoplocation != null">
+				#{shoplocation,jdbcType=VARCHAR},
+			</if>
+			<if test="provinceId != null">
+				#{provinceId,jdbcType=VARCHAR},
+			</if>
+			<if test="cityId != null">
+				#{cityId,jdbcType=VARCHAR},
+			</if>
+			<if test="areaId != null">
+				#{areaId,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				#{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="wechat != null">
+				#{wechat,jdbcType=VARCHAR},
+			</if>
+			<if test="investigatedate != null">
+				#{investigatedate,jdbcType=DATE},
+			</if>
+			<if test="remarks != null">
+				#{remarks,jdbcType=VARCHAR},
+			</if>
+			<if test="createBy != null">
+				#{createBy,jdbcType=VARCHAR},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateBy != null">
+				#{updateBy,jdbcType=VARCHAR},
+			</if>
+			<if test="updateDate != null">
+				#{updateDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="delFlag != null">
+				#{delFlag,jdbcType=CHAR},
+			</if>
+			<if test="otherProject != null">
+				#{otherProject,jdbcType=VARCHAR},
+			</if><if test="estimatedArea != null">
+				#{estimatedArea,jdbcType=VARCHAR},
+			</if><if test="isSupportIdea != null">
+				#{isSupportIdea,jdbcType=CHAR},
+			</if><if test="gender != null">
+				#{gender,jdbcType=CHAR},
+			</if>
+			<if test="customerName != null">
+				#{customerName,jdbcType=VARCHAR},
+			</if><if test="provinceName != null">
+				#{provinceName,jdbcType=VARCHAR},
+			</if><if test="cityName != null">
+				#{cityName,jdbcType=VARCHAR},
+			</if><if test="areaName != null">
+				#{areaName,jdbcType=VARCHAR},
+			</if><if test="sourceName != null">
+				#{sourceName,jdbcType=VARCHAR},
+			</if><if test="createByName != null">
+				#{createByName,jdbcType=VARCHAR},
+			</if>
+			<if test="updateByName != null">
+				#{updateByName,jdbcType=VARCHAR},
+			</if>
+			
+			
+			
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.entity.SmStartupintention">
+		update sm_startupintention
+		<set>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="customerId != null">
+				customer_id = #{customerId,jdbcType=VARCHAR},
+			</if>
+			<if test="source != null">
+				source = #{source,jdbcType=VARCHAR},
+			</if>
+			<if test="project != null">
+				project = #{project,jdbcType=VARCHAR},
+			</if>
+			<if test="movedreason != null">
+				movedReason = #{movedreason,jdbcType=VARCHAR},
+			</if>
+			<if test="guesttype != null">
+				guestType = #{guesttype,jdbcType=VARCHAR},
+			</if>
+			<if test="otherguesttype != null">
+				otherGuestType = #{otherguesttype,jdbcType=VARCHAR},
+			</if>
+			<if test="startupdate != null">
+				startUpDate = #{startupdate,jdbcType=VARCHAR},
+			</if>
+			<if test="budget != null">
+				budget = #{budget,jdbcType=VARCHAR},
+			</if>
+			<if test="fundssource != null">
+				fundsSource = #{fundssource,jdbcType=VARCHAR},
+			</if>
+			<if test="startupreason != null">
+				startUpReason = #{startupreason,jdbcType=VARCHAR},
+			</if>
+			<if test="decisionmaker != null">
+				decisionMaker = #{decisionmaker,jdbcType=VARCHAR},
+			</if>
+			<if test="hassetupresexp != null">
+				hasSetUpResExp = #{hassetupresexp,jdbcType=CHAR},
+			</if>
+			<if test="hassetupexp != null">
+				hasSetUpExp = #{hassetupexp,jdbcType=CHAR},
+			</if>
+			<if test="hasshop != null">
+				hasShop = #{hasshop,jdbcType=CHAR},
+			</if>
+			<if test="detailswanttoknow != null">
+				detailsWantToKnow =
+				#{detailswanttoknow,jdbcType=VARCHAR},
+			</if>
+			<if test="industry != null">
+				industry = #{industry,jdbcType=VARCHAR},
+			</if>
+			<if test="industryexperience != null">
+				industryExperience =
+				#{industryexperience,jdbcType=VARCHAR},
+			</if>
+			<if test="customername != null">
+				customerName = #{customername,jdbcType=VARCHAR},
+			</if>
+			<if test="age != null">
+				age = #{age,jdbcType=VARCHAR},
+			</if>
+			<if test="shoplocation != null">
+				shopLocation = #{shoplocation,jdbcType=VARCHAR},
+			</if>
+			<if test="provinceId != null">
+				province_id = #{provinceId,jdbcType=VARCHAR},
+			</if>
+			<if test="cityId != null">
+				city_id = #{cityId,jdbcType=VARCHAR},
+			</if>
+			<if test="areaId != null">
+				area_id = #{areaId,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				phone = #{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="wechat != null">
+				wechat = #{wechat,jdbcType=VARCHAR},
+			</if>
+			<if test="investigatedate != null">
+				investigateDate = #{investigatedate,jdbcType=DATE},
+			</if>
+			<if test="remarks != null">
+				remarks = #{remarks,jdbcType=VARCHAR},
+			</if>
+			<if test="createBy != null">
+				create_by = #{createBy,jdbcType=VARCHAR},
+			</if>
+			<if test="createDate != null">
+				create_date = #{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateBy != null">
+				update_by = #{updateBy,jdbcType=VARCHAR},
+			</if>
+			<if test="updateDate != null">
+				update_date = #{updateDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="delFlag != null">
+				del_flag = #{delFlag,jdbcType=CHAR},
+			</if>
+			<if test="otherProject != null">
+				otherProject = #{otherProject,jdbcType=CHAR},
+			</if>
+			<if test="estimatedArea != null">
+				estimatedArea = #{estimatedArea,jdbcType=CHAR},
+			</if>
+			<if test="isSupportIdea != null">
+				isSupportIdea = #{isSupportIdea,jdbcType=CHAR},
+			</if>
+			<if test="gender != null">
+				gender = #{gender,jdbcType=CHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.entity.SmStartupintention">
+		update
+		sm_startupintention
+		set name = #{name,jdbcType=VARCHAR},
+		customer_id =
+		#{customerId,jdbcType=VARCHAR},
+		source = #{source,jdbcType=VARCHAR},
+		project = #{project,jdbcType=VARCHAR},
+		movedReason =
+		#{movedreason,jdbcType=VARCHAR},
+		guestType =
+		#{guesttype,jdbcType=VARCHAR},
+		otherGuestType =
+		#{otherguesttype,jdbcType=VARCHAR},
+		startUpDate =
+		#{startupdate,jdbcType=VARCHAR},
+		budget = #{budget,jdbcType=VARCHAR},
+		fundsSource = #{fundssource,jdbcType=VARCHAR},
+		startUpReason =
+		#{startupreason,jdbcType=VARCHAR},
+		decisionMaker =
+		#{decisionmaker,jdbcType=VARCHAR},
+		hasSetUpResExp =
+		#{hassetupresexp,jdbcType=CHAR},
+		hasSetUpExp =
+		#{hassetupexp,jdbcType=CHAR},
+		hasShop = #{hasshop,jdbcType=CHAR},
+		detailsWantToKnow = #{detailswanttoknow,jdbcType=VARCHAR},
+		industry =
+		#{industry,jdbcType=VARCHAR},
+		industryExperience =
+		#{industryexperience,jdbcType=VARCHAR},
+		customerName =
+		#{customername,jdbcType=VARCHAR},
+		age = #{age,jdbcType=VARCHAR},
+		shopLocation = #{shoplocation,jdbcType=VARCHAR},
+		province_id =
+		#{provinceId,jdbcType=VARCHAR},
+		city_id = #{cityId,jdbcType=VARCHAR},
+		area_id = #{areaId,jdbcType=VARCHAR},
+		phone =
+		#{phone,jdbcType=VARCHAR},
+		wechat = #{wechat,jdbcType=VARCHAR},
+		investigateDate = #{investigatedate,jdbcType=DATE},
+		remarks =
+		#{remarks,jdbcType=VARCHAR},
+		create_by = #{createBy,jdbcType=VARCHAR},
+		create_date = #{createDate,jdbcType=TIMESTAMP},
+		update_by =
+		#{updateBy,jdbcType=VARCHAR},
+		update_date =
+		#{updateDate,jdbcType=TIMESTAMP},
+		del_flag = #{delFlag,jdbcType=CHAR},
+		otherProject = #{otherProject,jdbcType=VARCHAR},
+		estimatedArea = #{estimatedArea,jdbcType=VARCHAR},
+		isSupportIdea = #{isSupportIdea,jdbcType=VARCHAR},
+		gender = #{gender,jdbcType=CHAR}
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	<!-- 手机号查询客户 -->
+	<select id="selectCustomerPhone" resultType="com.entity.SmCustomer"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_SmCustomer_List" />
+		from sm_customer
+		where 1=1
+		<if test="phone !=null  ">
+			AND phone = #{phone}
+		</if>
+		LIMIT 0,1
+	</select>
+	<!-- 微信号查询客户 -->
+	<select id="selectCustomerWechat" resultType="com.entity.SmCustomer"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_SmCustomer_List" />
+		from sm_customer
+		where 1=1
+		<if test="wechat !=null  ">
+		  AND	wechat = #{wechat}
+		</if>
+		LIMIT 0,1
+	</select>
+
+	<insert id="insertCustomer" parameterType="com.entity.SmCustomer">
+		insert into
+		sm_customer (id, name, customerName,
+		sex, age, customerType,
+		attitude, province_id, city_id,
+		area_id, phone, project,
+		customerSource, in_date, firstContactTime,
+		lastContactTime, customerLevel, IDNumber,
+		status, team_id, teamLeader,
+		seller_id, office_id, negotiator,
+		customerServiceRep, customerServiceLeader,
+		technologist, constructionManager, contractLevel,
+		price,
+		 remarks, 
+		create_by, create_date, update_by,
+		update_date, del_flag, customerSource2,
+	 assign_customer_date, isFullPayment,
+		wechat, sourceProject, 
+		clientType, yuTime, gotStatus,
+		invalidcause, fb_stuars, comeTime,
+		chengTime, eliteTeam, division, customerSource_name, create_by_name, update_by_name,text1,text0,seller_show_name )
+		values (
+		#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+		#{customername,jdbcType=VARCHAR},
+		#{sex,jdbcType=CHAR}, #{age,jdbcType=INTEGER}, #{customertype,jdbcType=VARCHAR},
+		#{attitude,jdbcType=VARCHAR}, #{provinceId,jdbcType=VARCHAR},
+		#{cityId,jdbcType=VARCHAR},
+		#{areaId,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{project,jdbcType=VARCHAR},
+		#{customersource,jdbcType=VARCHAR}, #{inDate,jdbcType=DATE},
+		#{firstcontacttime,jdbcType=TIMESTAMP},
+		#{lastcontacttime,jdbcType=TIMESTAMP},
+		#{customerlevel,jdbcType=VARCHAR}, #{idnumber,jdbcType=VARCHAR},
+		#{status,jdbcType=VARCHAR}, #{teamId,jdbcType=VARCHAR},
+		#{teamleader,jdbcType=VARCHAR},
+		#{sellerId,jdbcType=VARCHAR}, #{officeId,jdbcType=VARCHAR}, #{negotiator,jdbcType=VARCHAR},
+		#{customerservicerep,jdbcType=VARCHAR},
+		#{customerserviceleader,jdbcType=VARCHAR},
+		#{technologist,jdbcType=VARCHAR},
+		#{constructionmanager,jdbcType=VARCHAR},
+		#{contractlevel,jdbcType=VARCHAR},
+		#{price,jdbcType=DECIMAL},
+		#{remarks,jdbcType=VARCHAR},
+		#{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR},
+		#{updateDate,jdbcType=TIMESTAMP}, #{delFlag,jdbcType=VARCHAR},
+		#{customersource2,jdbcType=VARCHAR},
+		 #{assignCustomerDate,jdbcType=DATE}, #{isfullpayment,jdbcType=CHAR},
+		#{wechat,jdbcType=VARCHAR}, #{sourceproject,jdbcType=CHAR},
+		#{clienttype,jdbcType=VARCHAR}, #{yutime,jdbcType=TIMESTAMP}, #{gotstatus,jdbcType=VARCHAR},
+		#{invalidcause,jdbcType=VARCHAR}, #{fbStuars,jdbcType=VARCHAR},
+		#{cometime,jdbcType=TIMESTAMP},
+		#{chengtime,jdbcType=TIMESTAMP}, #{eliteteam,jdbcType=VARCHAR}, #{division,jdbcType=VARCHAR},
+		#{customersourceName,jdbcType=VARCHAR}, #{createName,jdbcType=VARCHAR}, #{updateName,jdbcType=VARCHAR},
+		'0','总部',#{customersource,jdbcType=VARCHAR}
+		)
+	</insert>
+
+
+	<select id="selectAge" resultType="java.lang.String"
+		parameterType="java.lang.String">
+		select
+		label
+		from sys_dict
+		where
+		1=1
+		<if test="age !=null  ">
+		AND	value = #{age}
+		</if>
+	</select>
+
+	<select id="seleSource" resultType="java.lang.Integer"
+		parameterType="java.lang.String">
+		select
+		count(1)
+		from sm_source
+		where
+		1=1
+		<if test="source !=null  ">
+			AND id = #{source}
+		</if>
+	</select>
+	<select id="getSourceName" resultType="java.lang.String"
+		parameterType="java.lang.String">
+		select
+		name
+		from sm_source
+		where
+		1=1
+		<if test="source !=null  ">
+			AND id = #{source}
+		</if>
+	</select>
+	<select id="selectNewNum" resultType="java.lang.Integer"
+		parameterType="java.lang.String">
+		select
+		auto_num
+		from
+		sys_autoname
+		where table_name = #{name}
+
+	</select>
+	<select id="selectProject" resultType="java.lang.Integer"
+		parameterType="java.lang.String">
+		select
+		COUNT(1)
+		from
+		sm_startupintention a
+		where a.customer_id = #{id}
+		AND a.project = #{project}
+	</select>
+	<update id="updateNewNum">
+		update sys_autoname set auto_num=#{newNum} where table_name = #{tableName}
+	</update>
+    <select id="getProjectName" resultType="java.lang.String"
+		parameterType="java.lang.String">
+		select
+		label
+		from sys_dict
+		where
+		1=1
+		<if test="project !=null  ">
+		and	value = #{project}
+		</if>
+		and del_flag = '0'
+		and type = 'sm_project'
+	</select>
+	
+	<insert id="insertSelectiveOaNotify"  parameterType="com.entity.OaNotify" >
+	    insert into oa_notify
+	    <trim prefix="(" suffix=")" suffixOverrides="," >
+	      <if test="id != null" >
+	        id,
+	      </if>
+	      <if test="type != null" >
+	        type,
+	      </if>
+	      <if test="title != null" >
+	        title,
+	      </if>
+	      <if test="content != null" >
+	        content,
+	      </if>
+	      <if test="files != null" >
+	        files,
+	      </if>
+	      <if test="status != null" >
+	        status,
+	      </if>
+	      <if test="createBy != null" >
+	        create_by,
+	      </if>
+	      <if test="createDate != null" >
+	        create_date,
+	      </if>
+	      <if test="updateBy != null" >
+	        update_by,
+	      </if>
+	      <if test="updateDate != null" >
+	        update_date,
+	      </if>
+	      <if test="remarks != null" >
+	        remarks,
+	      </if>
+	      <if test="delFlag != null" >
+	        del_flag,
+	      </if>
+	    </trim>
+	    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="id != null" >
+	        #{id,jdbcType=VARCHAR},
+	      </if>
+	      <if test="type != null" >
+	        #{type,jdbcType=CHAR},
+	      </if>
+	      <if test="title != null" >
+	        #{title,jdbcType=VARCHAR},
+	      </if>
+	      <if test="content != null" >
+	        #{content,jdbcType=VARCHAR},
+	      </if>
+	      <if test="files != null" >
+	        #{files,jdbcType=VARCHAR},
+	      </if>
+	      <if test="status != null" >
+	        #{status,jdbcType=CHAR},
+	      </if>
+	      <if test="createBy != null" >
+	        #{createBy,jdbcType=VARCHAR},
+	      </if>
+	      <if test="createDate != null" >
+	        #{createDate,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="updateBy != null" >
+	        #{updateBy,jdbcType=VARCHAR},
+	      </if>
+	      <if test="updateDate != null" >
+	        #{updateDate,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="remarks != null" >
+	        #{remarks,jdbcType=VARCHAR},
+	      </if>
+	      <if test="delFlag != null" >
+	        #{delFlag,jdbcType=CHAR},
+	      </if>
+	    </trim>
+	  </insert>
+  
+   <insert id="insertSelectiveNotifyRecord" parameterType="com.entity.OaNotifyRecord" >
+    insert into oa_notify_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="oaNotifyId != null" >
+        oa_notify_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="readFlag != null" >
+        read_flag,
+      </if>
+      <if test="readDate != null" >
+        read_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="oaNotifyId != null" >
+        #{oaNotifyId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="readFlag != null" >
+        #{readFlag,jdbcType=CHAR},
+      </if>
+      <if test="readDate != null" >
+        #{readDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  
+</mapper>
