@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-20 13:42:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="pojo.Tannouncement" table="TANNOUNCEMENT">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="38" scale="0" />
+            <generator class="sequence" >
+            <param name="sequence">SEQ_TANNOUNCEMENT</param>
+            </generator>
+        </id>
+        <many-to-one name="tuserByCreatuser" class="pojo.Tuser" fetch="select">
+            <column name="CREATUSER" precision="38" scale="0" />
+        </many-to-one>
+        <many-to-one name="tuserByModifyuser" class="pojo.Tuser" fetch="select">
+            <column name="MODIFYUSER" precision="38" scale="0" />
+        </many-to-one>
+        <property name="anntitle" type="string">
+            <column name="ANNTITLE" length="20" />
+        </property>
+        <property name="anncontext" type="string">
+            <column name="ANNCONTEXT" length="1000" />
+        </property>
+        <property name="creattime" type="timestamp">
+            <column name="CREATTIME" length="7" />
+        </property>
+        <property name="modifytime" type="timestamp">
+            <column name="MODIFYTIME" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

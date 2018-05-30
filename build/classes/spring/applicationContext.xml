@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:tx="http://www.springframework.org/schema/tx"
+   
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+  <bean id="advice" class="service.advice.Myadvice"></bean>
+  <!-- 用户管理 -->
+  <!-- <bean id="tuserDao" class="com.lechenggu.tuser.dao.impl.UserDaoImpl" scope="prototype">
+  </bean>
+  
+   <bean id="tuserBiz" class="com.lechenggu.tuser.biz.impl.UserBizImpl" scope="prototype">
+   <property name="userdao" ref="tuserDao"></property>
+  </bean>
+  查询用户/新增用户
+  <bean id="tuserAction" class="com.lechenggu.tuser.action.logintuser.TuserAction" scope="prototype">
+  <property name="userBiz" ref="tuserBiz"></property>
+  </bean>
+  
+  修改用户
+  <bean id="UpuserAction" class="com.lechenggu.tuser.action.logintuser.UpdataTuser" scope="prototype">
+  
+  </bean>
+  删除用户
+  <bean id="deuserAction" class="com.lechenggu.tuser.action.logintuser.DeleteUser" scope="prototype">
+  
+  </bean> -->
+  <!--  
+  <bean id="TcateDao" class="com.lechenggu.tcategory.dao.impl.CateDaoImpl" scope="prototype">
+  </bean>
+  <bean id="TcateBiz" class="com.lechenggu.tcategory.biz.impl.CateBizImpl">
+  </bean>
+  查询大分类
+  <bean id="TCate" class="com.lechenggu.tcategory.action.DoCategory" scope="prototype">
+  
+  </bean>
+  大分类新增
+  <bean id="TAddCate" class="com.lechenggu.tcategory.action.AddCate" scope="prototype">
+  
+  </bean>
+  修改大分类
+  <bean id="TupCate" class="com.lechenggu.tcategory.action.UpdateCate" scope="prototype">
+  
+  </bean>
+  删除大分类
+  <bean id="TdeleCate" class="com.lechenggu.tcategory.action.deleteCate" scope="prototype">
+  
+  </bean> -->
+    <!-- 小分类 -->
+ <!-- <bean id="ScateDao" class="com.lechenggu.tcategorysecond.dao.impl.IcateSecondDaoImpl">
+  
+  </bean>
+  <bean id="ScateBiz" class="com.lechenggu.tcategorysecond.biz.impl.IcateSecondBizImpl">
+  </bean>
+ 
+  <bean id="doCateSecond" class="com.lechenggu.tcategorysecond.action.DoCateSecond">
+  
+  </bean>
+    <bean id="Saddcate" class="com.lechenggu.tcategorysecond.action.AddCateSecond">
+  
+  </bean>
+  
+ 
+  <bean id="Supcate" class="com.lechenggu.tcategorysecond.action.updateStcate">
+  </bean>
+  
+ 
+  <bean id="Sdelecate" class="com.lechenggu.tcategorysecond.action.deteScate">
+  </bean>   -->
+  
+   <!-- 公告管理 -->
+  <!--<bean id="tanDao" class="com.lechenggu.tannouncement.dao.impl.ItannouncementDaoImpl">
+  
+  </bean>
+  <bean id="tannBiz" class="com.lechenggu.tannouncement.biz.impl.ItannouncementBizImpl">
+  <property name="tanndao" ref="tanDao"></property>
+  </bean>
+  <bean id="tannAction" class="com.lechenggu.tannouncement.action.DoTannouncement">
+  <property name="tanb" ref="tannBiz"></property>
+  </bean> -->
+  
+  
+  <aop:config>
+ <aop:aspect ref="advice">
+ <aop:pointcut expression="execution(* com.lechenggu.tuser.biz.impl.*.*(..))" id="qiedian"/>
+ <aop:before method="hehe" pointcut-ref="qiedian"/>
+ <aop:after method="haha" pointcut-ref="qiedian"/>
+ <aop:around method="heihei" pointcut-ref="qiedian"/>
+ </aop:aspect>
+</aop:config>
+
+
+<!-- 配置数据源不能自动装配即  autowire="no"-->
+ 
+<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" autowire="no">
+        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"></property>
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521/qiqi"/>
+        <property name="user" value="yangyang"/>
+        <property name="password" value="924"/>
+        <!--property name="initialPoolSize" value="3"/>
+        <property name="maxPoolSize" value="6"/>
+        <property name="maxStatements" value="100"/>
+        <property name="acquireIncrement" value="2"/-->
+</bean>
+ 
+
+<!-- spring整合hibernate 就是把sessionFactory配置到spring 容器 注入给dao -->
+<bean id="sf"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle10gDialect
+				</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto"> update </prop> -->
+				<prop key="hibernate.show_sql"> true </prop>
+				<prop key="hibernate.format_sql"> true </prop>
+			</props>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:pojo/*.hbm.xml</value>
+			</list>
+		</property>
+</bean>
+
+<!-- 配置事务管理器类，即 autowire="no"-->
+<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sf" />
+</bean>
+
+<!-- 配置事务通知 -->
+<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes> <!--对拦截的方法进行过滤  不同的方法采用不同的调用事物的规则-->
+			<tx:method name="ad*" propagation="REQUIRED" isolation= "DEFAULT"/> 
+			<tx:method name="up*" propagation="REQUIRED"/>
+			<tx:method name="de*" propagation="REQUIRED" />
+			<tx:method name="*" propagation="REQUIRED" read-only="true" />
+		</tx:attributes>
+</tx:advice>
+	
+	<!-- 配置切面 -->
+<aop:config>
+  <!-- 对那些方法进行拦截，进行切入 -->
+ <aop:pointcut id="pt" expression="execution(* com.lechenggu.tuser.dao.impl.*.*(..))"/>
+  <aop:pointcut id="pt" expression="execution(* com.lechenggu.qiantai.dao.impl.*.*(..))"/>
+  <!-- 切入点 pointcut-ref="pt"  通知-->
+  <aop:advisor advice-ref="txAdvice" pointcut-ref="pt"/>
+</aop:config>
+
+
+
+
+<!-- 数据源不能自动装配，即 autowire="no"-->
+<!-- <bean id="goodsDao" class="com.lechenggu.tgoods.dao.impl.IgoodsDaoImpl"  autowire="no">
+    <property name="dataSource" ref="dataSource"></property>
+</bean>
+ 
+ <bean id="goodsBiz" class="com.lechenggu.tgoods.biz.impl.IgoodsBizImpl">
+ </bean>
+ <bean id="doAction" class="com.lechenggu.tgoods.action.DoGoods" scope="prototype"></bean>
+ <bean id="addAction" class="com.lechenggu.tgoods.action.addgoods" scope="prototype"></bean>
+ <bean id="upAction" class="com.lechenggu.tgoods.action.updategoods" scope="prototype"></bean>
+  <bean id="delAction" class="com.lechenggu.tgoods.action.deteleTgoods" scope="prototype"></bean>
+  -->
+
+ </beans>

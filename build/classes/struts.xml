@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="message" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.ui.theme" value="xhtml" />
+	<constant name="struts.multipart.maxSize" value="52428800" />
+	<constant name="struts.objectFactory" value="spring"></constant>
+	
+	<package name="nosession" namespace="/" extends="struts-default"
+		abstract="true">
+		<!-- 定义不拦截session的包 -->
+		<interceptors>
+			<interceptor name="hehetime" class="intercept.TimerIntercepter"></interceptor>
+			<interceptor-stack name="nosessionStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="hehetime"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="nosessionStack"></default-interceptor-ref>
+
+
+		<!--当找不到页面时调用，<default-action-ref name=""></default-action-ref> 不能用动态action -->
+		<default-action-ref name="nofile.action"></default-action-ref>
+
+		<!--全局异常处理 -->
+		<!-- <global-results>
+			<result name="sql">/exception1.jsp</result>
+			<result name="root">/exception2.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="Java.sql.SQLException"
+				result="sql" />
+			<exception-mapping exception="java.lang.Exception"
+				result="root" />
+		</global-exception-mappings> -->
+	</package>
+
+	<package name="needsession" namespace="/" extends="nosession"
+		abstract="true">
+
+
+		<interceptors>
+			<interceptor name="sessionIntercepter" class="intercept.SessionIntercepter"></interceptor>
+			<interceptor-stack name="sessionStack">
+				<interceptor-ref name="nosessionStack"></interceptor-ref>
+				<interceptor-ref name="sessionIntercepter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="sessionStack"></default-interceptor-ref>
+
+	</package>
+
+	<package name="renthouse" namespace="/" extends="nosession">
+
+		<!-- 页面找不到相应的action时 -->
+		<global-results>
+			<result name="error">error.jsp</result>
+			<result name="login" type="redirect">login.jsp</result>
+		</global-results>
+		<!-- 管理员登录 -->
+		  <action name="dengLu" class="douserAction" method="dologin"> 
+			<result name="success">index.jsp</result> 
+			<result name="input">login.jsp</result> 
+			</action> 
+		<!-- class可以省略，默认com.opensymphony.xwork2.ActionSupport; -->
+		<action name="nofile">
+			<!-- nane可以省略，默认是execute,type默认是转发dispatcher -->
+			<result>sshibai.jsp</result>
+		</action>
+		<!-- 用户查询 -->
+		<!-- 动态action -->
+		<action name="TuserAction" class="tuserAction">
+			<result name="chenggong" type="redirect">TuserAction!UserManage.action
+			</result>
+			<result name="shibai">user_add.jsp</result>
+			<result name="hehe">user_manage.jsp</result>
+			<result name="haha">user_add.jsp</result>
+		</action>
+
+		<!-- 用户修改 -->
+		<action name="UpdateUs" class="UpuserAction">
+			<result name="good" type="redirect">TuserAction!UserManage.action
+			</result>
+			<result name="success">UpdateUser.jsp</result>
+			<result name="shibai">UpdateUser.jsp</result>
+		</action>
+
+		<!-- 用户删除 -->
+		<action name="UpdateUse" class="deuserAction">
+
+			<result name="success" type="redirect">TuserAction!UserManage.action
+			</result>
+			<result name="shibai" type="redirect">/exception2.jsp</result>
+		</action>
+
+		<!-- 大分类分页 -->
+		<action name="chaCate" class="TCate" method="loginCate">
+			<result name="chengg">class_manage.jsp</result>
+			<result name="shib">index.jsp</result>
+		</action>
+
+		<!--大分类新增 -->
+		<action name="categoryAdd" class="TAddCate" method="addCate">
+			<result name="success" type="redirect">chaCate.action</result>
+			<result name="file">/exception2.jsp</result>
+		</action>
+
+		<!-- 修改大分类 -->
+		<action name="updcate" class="TupCate">
+
+			<result>updatetcate_modify.jsp</result>
+		</action>
+		<action name="updeCate" class="TupCate" method="updateTcate">
+			<result name="ky" type="redirect">chaCate.action</result>
+		</action>
+		<!-- 删除大分类 -->
+		<action name="deleteCate" class="TdeleCate">
+			<result type="redirect">chaCate.action</result>
+		</action>
+
+		<!-- 小分类分页 -->
+		<action name="chaXiaoCate" class="doCateSecond" method="loginCateSecond">
+			<result name="chengg">category_modify.jsp</result>
+			<result name="shib">/exception2.jsp</result>
+		</action>
+		<!-- 新增小分类 -->
+		<action name="queryCate" class="Saddcate">
+			<result name="keyi">categoryxiao_add.jsp</result>
+		</action>
+		<!-- 修改小分类 -->
+		<action name="updscate" class="Supcate">
+			<result>editXiao.jsp</result>
+		</action>
+
+		<action name="updateScate" class="Supcate" method="updatesScate">
+
+			<result name="keyi" type="redirectAction">chaXiaoCate.action</result>
+		</action>
+
+		<!-- 小分类新增 -->
+		<action name="addScate" class="Saddcate" method="addSmallCate">
+			<result name="success" type="redirectAction">chaXiaoCate.action</result>
+			<result name="file">/exception2.jsp</result>
+		</action>
+
+		<!-- 删除小分类 -->
+		<action name="detescate" class="Sdelecate">
+			<result type="redirectAction">chaXiaoCate.action</result>
+		</action>
+
+
+
+		<!-- 商品分页 -->
+		<action name="chaXiaogoods" class="doAction" method="loginGoods">
+			<result name="chengg">goods_detail_manage.jsp</result>
+			<result name="shib">/exception2.jsp</result>
+		</action>
+		<!-- 添加商品 -->
+		<action name="addtgoods" class="addAction">
+			<result>goods_detail_modify.jsp</result>
+		</action>
+		<action name="addtgods" class="addAction" method="quScaate">
+			<result name="chenggong" type="dispatcher">smallgoodsCate.jsp</result>
+		</action>
+		<action name="tgs" class="addAction" method="addTgoods">
+			<result name="keyi" type="redirectAction">chaXiaogoods.action</result>
+			<result name="hehe">goods_detail_modify.jsp</result>
+			<interceptor-ref name="fileUpload">
+				<!-- <param name="savePath">/data</param> -->
+				<param name="maximumSize">52428800</param>
+
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- 修改商品 -->
+		<action name="updatequerycate" class="upAction">
+			<result>UpdateTgoods.jsp</result>
+		</action>
+		<!-- 查询小分类 -->
+		<action name="updateGoods" class="addAction" method="quScaate">
+			<result name="keyi" type="dispatcher">smallgoodsCate.jsp</result>
+		</action>
+
+		<!-- 修改商品 -->
+		<action name="upGoods" class="upAction">
+			<result type="dispatcher">UpdateTgoods.jsp</result>
+		</action>
+
+
+
+		<action name="updGoodst" class="upAction" method="quScaate">
+			<result name="chenggong">CateGoods.jsp</result>
+		</action>
+
+		<action name="upGoodstt" class="upAction" method="updateTgoods">
+			<result name="hehe" type="redirectAction">chaXiaogoods.action</result>
+			<interceptor-ref name="fileUpload">
+				<!-- <param name="savePath">/data</param> -->
+				<param name="maximumSize">52428800</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+
+		<!-- 删除商品 -->
+
+		<action name="deleTgood" class="delAction">
+			<result type="redirectAction">chaXiaogoods.action</result>
+		</action>
+
+		<!-- 公告管理 -->
+		<action name="tannDo" class="tannAction">
+			<result>announcement_manage.jsp</result>
+		</action>
+
+		<!-- 國際化 -->
+		<action name="changlan" class="com.lechenggu.languageaction.LuageAction">
+			<result>login.jsp</result>
+		</action>
+
+		<!--动态action method里定义的字符可以替代* -->
+		<!--<action name= "*User" class="com.houserent.action.UserAction" method="{1}"> 
+			<result>/page/{1}_success.jsp</result> <result name="input">/page/{1}.jsp</result> 
+			<result name="error">/page/error.jsp</result> </action> -->
+
+		<action name="queryGood" class="sousuo.action.QueryGood">
+			<result>sousuo.jsp</result>
+		</action>
+
+		<action name="deUse" class="sousuo.action.UserAction">
+			<result name="keyi">ceshi.jsp</result>
+
+			<result>login.jsp</result>
+
+		</action>
+
+<!-- 前台用户 -->
+<action name="login" class="doTcus">
+<result name="success">guimeishangcheng.jsp</result>
+<result name="input">guimei.jsp</result>
+
+</action>
+
+
+	</package>
+</struts>

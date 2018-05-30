@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-20 13:42:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="pojo.Torder" table="TORDER">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="38" scale="0" />
+            <generator class="sequence" >
+            <param name="sequence">SEQ_TORDER</param>
+            </generator>
+        </id>
+        <many-to-one name="tcustomer" class="pojo.Tcustomer" fetch="select">
+            <column name="CUSTOMERID" precision="38" scale="0" />
+        </many-to-one>
+        <property name="ordertime" type="timestamp">
+            <column name="ORDERTIME" length="7" />
+        </property>
+        <property name="sumcost" type="java.lang.Long">
+            <column name="SUMCOST" precision="10" scale="4" />
+        </property>
+        <property name="receiver" type="string">
+            <column name="RECEIVER" length="30" />
+        </property>
+        <property name="tel" type="string">
+            <column name="TEL" length="20" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="100" />
+        </property>
+        <property name="state" type="java.lang.Long">
+            <column name="STATE" precision="38" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

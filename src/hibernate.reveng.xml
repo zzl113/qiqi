@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-name="TANNOUNCEMENT"/>
+  <table-filter match-name="TAREA"/>
+  <table-filter match-name="TCART"/>
+  <table-filter match-name="TCATEGORY"/>
+  <table-filter match-name="TCATEGORYSECOND"/>
+  <table-filter match-name="TCUSTOMER"/>
+  <table-filter match-name="TGOODS"/>
+  <table-filter match-name="TGOODSDISCOUNT"/>
+  <table-filter match-name="TGOODSPIC"/>
+  <table-filter match-name="TORDER"/>
+  <table-filter match-name="TORDERDETAIL"/>
+  <table-filter match-name="TSYSLOG"/>
+  <table-filter match-name="TUSER"/>
+</hibernate-reverse-engineering>

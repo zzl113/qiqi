@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-20 13:42:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="pojo.Tsyslog" table="TSYSLOG">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="38" scale="0" />
+            <generator class="sequence" >
+            <param name="sequence">SEQ_TSYSLOG</param>
+            </generator>
+        </id>
+        <many-to-one name="tuser" class="pojo.Tuser" fetch="select">
+            <column name="USERID" precision="38" scale="0" />
+        </many-to-one>
+        <property name="loginname" type="string">
+            <column name="LOGINNAME" length="30" />
+        </property>
+        <property name="realname" type="string">
+            <column name="REALNAME" length="50" />
+        </property>
+        <property name="optype" type="string">
+            <column name="OPTYPE" length="30" />
+        </property>
+        <property name="opdesc" type="string">
+            <column name="OPDESC" length="50" />
+        </property>
+        <property name="optime" type="timestamp">
+            <column name="OPTIME" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

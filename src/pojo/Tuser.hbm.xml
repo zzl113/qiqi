@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-20 13:42:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="pojo.Tuser" table="TUSER">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="38" scale="0" />
+           <generator class="sequence" >
+            <param name="sequence">PK_TUSER</param>
+            </generator>
+        </id>
+        <property name="loginname" type="string">
+            <column name="LOGINNAME" length="20" />
+        </property>
+        <property name="realname" type="string">
+            <column name="REALNAME" length="30" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="40" />
+        </property>
+        <property name="sex" type="java.lang.Long">
+            <column name="SEX" precision="38" scale="0" />
+        </property>
+        <property name="birthday" type="timestamp">
+            <column name="BIRTHDAY" length="7" />
+        </property>
+        <property name="cardid" type="string">
+            <column name="CARDID" length="25" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="30" />
+        </property>
+        <property name="tel" type="string">
+            <column name="TEL" length="20" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="50" />
+        </property>
+        <property name="isuse" type="java.lang.Long">
+            <column name="ISUSE" precision="38" scale="0" />
+        </property>
+        <property name="creatuser" type="java.lang.Long">
+            <column name="CREATUSER" precision="38" scale="0" />
+        </property>
+        <property name="creattime" type="timestamp">
+            <column name="CREATTIME" length="7" />
+        </property>
+        <property name="modifyuser" type="java.lang.Long">
+            <column name="MODIFYUSER" precision="38" scale="0" />
+        </property>
+        <property name="modifytime" type="timestamp">
+            <column name="MODIFYTIME" length="7" />
+        </property>
+        <set name="tcategoryseconds" inverse="true">
+            <key>
+                <column name="MODIFYUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tcategorysecond" />
+        </set>
+        <set name="tcategoriesForModifyuser" inverse="true">
+            <key>
+                <column name="MODIFYUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tcategory" />
+        </set>
+        <set name="tgoodspicsForModifyuser" inverse="true">
+            <key>
+                <column name="MODIFYUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tgoodspic" />
+        </set>
+        <set name="tcategoriesForCreatuser" inverse="true">
+            <key>
+                <column name="CREATUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tcategory" />
+        </set>
+        <set name="tannouncementsForModifyuser" inverse="true">
+            <key>
+                <column name="MODIFYUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tannouncement" />
+        </set>
+        <set name="tsyslogs" inverse="true">
+            <key>
+                <column name="USERID" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tsyslog" />
+        </set>
+        <set name="tgoodsdiscountsForModifyuser" inverse="true">
+            <key>
+                <column name="MODIFYUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tgoodsdiscount" />
+        </set>
+        <set name="tgoodsesForModifyuser" inverse="true">
+            <key>
+                <column name="MODIFYUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tgoods" />
+        </set>
+        <set name="tannouncementsForCreatuser" inverse="true">
+            <key>
+                <column name="CREATUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tannouncement" />
+        </set>
+        <set name="tgoodsdiscountsForCreateuser" inverse="true">
+            <key>
+                <column name="CREATEUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tgoodsdiscount" />
+        </set>
+        <set name="tgoodspicsForCreateuser" inverse="true">
+            <key>
+                <column name="CREATEUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tgoodspic" />
+        </set>
+        <set name="tgoodsesForCreatuser" inverse="true">
+            <key>
+                <column name="CREATUSER" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tgoods" />
+        </set>
+    </class>
+</hibernate-mapping>

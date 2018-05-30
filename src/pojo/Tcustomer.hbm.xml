@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-20 13:42:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="pojo.Tcustomer" table="TCUSTOMER">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="38" scale="0" />
+              <generator class="sequence" >
+            <param name="sequence">SEQ_TCUSTOMER</param>
+            </generator>
+        </id>
+        <property name="familyname" type="string">
+            <column name="FAMILYNAME" length="30" />
+        </property>
+        <property name="realname" type="string">
+            <column name="REALNAME" length="30" />
+        </property>
+        <property name="loginname" type="string">
+            <column name="LOGINNAME" length="30" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="40" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="30" />
+        </property>
+        <property name="sex" type="java.lang.Long">
+            <column name="SEX" precision="38" scale="0" />
+        </property>
+        <property name="picurl" type="string">
+            <column name="PICURL" length="30" />
+        </property>
+        <property name="hobby" type="string">
+            <column name="HOBBY" length="40" />
+        </property>
+        <property name="birthday" type="timestamp">
+            <column name="BIRTHDAY" length="7" />
+        </property>
+        <property name="regtime" type="timestamp">
+            <column name="REGTIME" length="7" />
+        </property>
+        <property name="isuse" type="java.lang.Long">
+            <column name="ISUSE" precision="38" scale="0" />
+        </property>
+        <set name="torders" inverse="true">
+            <key>
+                <column name="CUSTOMERID" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Torder" />
+        </set>
+        <set name="tcarts" inverse="true">
+            <key>
+                <column name="CUSTOMERID" precision="38" scale="0" />
+            </key>
+            <one-to-many class="pojo.Tcart" />
+        </set>
+    </class>
+</hibernate-mapping>
