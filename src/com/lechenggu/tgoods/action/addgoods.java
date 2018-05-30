@@ -9,9 +9,12 @@ import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 import com.lechenggu.tcategory.biz.IcategoryBiz;
 import com.lechenggu.tcategory.biz.impl.CateBizImpl;
@@ -25,8 +28,12 @@ import com.lechenggu.tgoods.entity.Tgoods;
 import com.lechenggu.tuser.entitys.Tuser;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+<<<<<<< HEAD
 @Scope("prototype")
 @Controller("addAction")
+=======
+
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 public class addgoods extends ActionSupport {
 	private Tgoods tg;
 
@@ -67,6 +74,7 @@ public class addgoods extends ActionSupport {
 		this.cate = cate;
 	}
 
+<<<<<<< HEAD
 	private IcategoryBiz ct ;
 
 	public IcategoryBiz getCt() {
@@ -86,6 +94,11 @@ public class addgoods extends ActionSupport {
 	}
 @Autowired
 	private IgoodsBiz gb;
+=======
+	private IcategoryBiz ct = new CateBizImpl();
+
+	private IgoodsBiz gb = new IgoodsBizImpl();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 	@Override
 	public String execute() throws Exception {

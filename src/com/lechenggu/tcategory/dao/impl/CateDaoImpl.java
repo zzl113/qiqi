@@ -7,20 +7,32 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import org.springframework.stereotype.Repository;
 
 import Util.BaseDaoImpl;
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 import Util.JdbcUtil;
 
 import com.lechenggu.tcategory.dao.Icategory;
 import com.lechenggu.tcategory.entity.Tcategory;
 import com.lechenggu.tuser.entitys.Tuser;
+<<<<<<< HEAD
 @Repository
 public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 
 	@Override
 	public int QueryCate() {
 		 Connection con=getConnection();
+=======
+
+public class CateDaoImpl implements Icategory{
+
+	@Override
+	public int QueryCate() {
+		 Connection con=JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		 PreparedStatement ps=null;
 		 ResultSet rs=null;
 		 try {
@@ -32,7 +44,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 			e.printStackTrace();
 			return 0;
 		}finally{
+<<<<<<< HEAD
 //			JdbcUtil.CloseAll(con, ps, rs);
+=======
+			JdbcUtil.CloseAll(con, ps, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		}
 		
 	}
@@ -41,7 +57,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 	public List<Tcategory> querCate(int pgNo, int pgSe) {
 		 
 		// 打开连接
+<<<<<<< HEAD
 				Connection con = getConnection();
+=======
+				Connection con = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 				PreparedStatement pss = null;
 				ResultSet rs= null;
 
@@ -74,7 +94,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 						return null;
 					} finally {
 
+<<<<<<< HEAD
 //						JdbcUtil.CloseAll(con, pss, rs);
+=======
+						JdbcUtil.CloseAll(con, pss, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 					}
 				}
@@ -82,7 +106,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 	@Override
 	public int addCatey(Tcategory cate) {
 		// 打开连接
+<<<<<<< HEAD
 				Connection conn =getConnection();
+=======
+				Connection conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 				PreparedStatement ps = null;
 		try {
 			int rt = -1;
@@ -94,7 +122,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 		} catch (Exception e) {
 			 e.printStackTrace();
 		}finally {
+<<<<<<< HEAD
 //			JdbcUtil.CloseAll(conn, ps, null);
+=======
+			JdbcUtil.CloseAll(conn, ps, null);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		}	 
 				
 				
@@ -109,12 +141,20 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 	@Override
 	public List<Tcategory> queryAllCa() {
 		// 打开连接
+<<<<<<< HEAD
 				Connection conn = getConnection();
+=======
+				Connection conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 				PreparedStatement ps = null;
 				ResultSet rs = null;
 				List<Tcategory> c = new ArrayList<Tcategory>();
 
+<<<<<<< HEAD
 				 
+=======
+				conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 				try {
 					ps = conn.prepareStatement("select * from tcategory");
 					rs = ps.executeQuery();
@@ -137,7 +177,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 					return null;
 				} finally {
 
+<<<<<<< HEAD
 //					JdbcUtil.CloseAll(conn, ps, rs);
+=======
+					JdbcUtil.CloseAll(conn, ps, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 				}
 
@@ -146,7 +190,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 	@Override
 	public Tcategory querById(int id) {
 		// 打开连接
+<<<<<<< HEAD
 				Connection conn = getConnection();
+=======
+				Connection conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 				PreparedStatement ps = null;
 				ResultSet rs = null;
 
@@ -178,7 +226,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 
 				} finally {
 
+<<<<<<< HEAD
 //					JdbcUtil.CloseAll(conn, ps, rs);
+=======
+					JdbcUtil.CloseAll(conn, ps, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 				}
 
 				return null;
@@ -187,7 +239,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 	@Override
 	public void updateTcategory(Tcategory cate) {
 		// 打开连接
+<<<<<<< HEAD
 		Connection con = getConnection();
+=======
+		Connection con = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		PreparedStatement pss = null;
 		ResultSet rss = null;
 		try {
@@ -207,7 +263,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 
 		} finally {
 
+<<<<<<< HEAD
 //			JdbcUtil.CloseAll(con, pss, rss);
+=======
+			JdbcUtil.CloseAll(con, pss, rss);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 		}
 
@@ -217,7 +277,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 	public void deleteDaCate(int id) {
 		PreparedStatement pss = null;
 		// 打开连接
+<<<<<<< HEAD
 				Connection con =getConnection();
+=======
+				Connection con = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 		try {
 
@@ -229,7 +293,11 @@ public class CateDaoImpl extends BaseDaoImpl implements Icategory{
 			e.printStackTrace();
 		}finally{
 			
+<<<<<<< HEAD
 //			JdbcUtil.CloseAll(null, pss, null);
+=======
+			JdbcUtil.CloseAll(null, pss, null);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		}
 		
 	}

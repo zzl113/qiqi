@@ -9,7 +9,10 @@
 	<constant name="struts.ui.theme" value="xhtml" />
 	<constant name="struts.multipart.maxSize" value="52428800" />
 	<constant name="struts.objectFactory" value="spring"></constant>
+<<<<<<< HEAD
 	
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 	<package name="nosession" namespace="/" extends="struts-default"
 		abstract="true">
 		<!-- 定义不拦截session的包 -->
@@ -27,7 +30,11 @@
 		<default-action-ref name="nofile.action"></default-action-ref>
 
 		<!--全局异常处理 -->
+<<<<<<< HEAD
 		<!-- <global-results>
+=======
+		<global-results>
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="sql">/exception1.jsp</result>
 			<result name="root">/exception2.jsp</result>
 		</global-results>
@@ -36,7 +43,11 @@
 				result="sql" />
 			<exception-mapping exception="java.lang.Exception"
 				result="root" />
+<<<<<<< HEAD
 		</global-exception-mappings> -->
+=======
+		</global-exception-mappings>
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 	</package>
 
 	<package name="needsession" namespace="/" extends="nosession"
@@ -62,10 +73,16 @@
 			<result name="login" type="redirect">login.jsp</result>
 		</global-results>
 		<!-- 管理员登录 -->
+<<<<<<< HEAD
 		  <action name="dengLu" class="douserAction" method="dologin"> 
 			<result name="success">index.jsp</result> 
 			<result name="input">login.jsp</result> 
 			</action> 
+=======
+		<!-- <action name="dengLu" class="com.lechenggu.tuser.action.UserAction" 
+			method="dologin"> <result name="success">index.jsp</result> <result name="input">login.jsp</result> 
+			</action> -->
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		<!-- class可以省略，默认com.opensymphony.xwork2.ActionSupport; -->
 		<action name="nofile">
 			<!-- nane可以省略，默认是execute,type默认是转发dispatcher -->
@@ -73,7 +90,12 @@
 		</action>
 		<!-- 用户查询 -->
 		<!-- 动态action -->
+<<<<<<< HEAD
 		<action name="TuserAction" class="tuserAction">
+=======
+		<action name="TuserAction"
+			class="tuserAction">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="chenggong" type="redirect">TuserAction!UserManage.action
 			</result>
 			<result name="shibai">user_add.jsp</result>
@@ -82,7 +104,12 @@
 		</action>
 
 		<!-- 用户修改 -->
+<<<<<<< HEAD
 		<action name="UpdateUs" class="UpuserAction">
+=======
+		<action name="UpdateUs"
+			class="UpuserAction">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="good" type="redirect">TuserAction!UserManage.action
 			</result>
 			<result name="success">UpdateUser.jsp</result>
@@ -98,13 +125,23 @@
 		</action>
 
 		<!-- 大分类分页 -->
+<<<<<<< HEAD
 		<action name="chaCate" class="TCate" method="loginCate">
+=======
+		<action name="chaCate" class="TCate"
+			method="loginCate">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="chengg">class_manage.jsp</result>
 			<result name="shib">index.jsp</result>
 		</action>
 
 		<!--大分类新增 -->
+<<<<<<< HEAD
 		<action name="categoryAdd" class="TAddCate" method="addCate">
+=======
+		<action name="categoryAdd" class="TAddCate"
+			method="addCate">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="success" type="redirect">chaCate.action</result>
 			<result name="file">/exception2.jsp</result>
 		</action>
@@ -114,7 +151,12 @@
 
 			<result>updatetcate_modify.jsp</result>
 		</action>
+<<<<<<< HEAD
 		<action name="updeCate" class="TupCate" method="updateTcate">
+=======
+		<action name="updeCate" class="TdeleCate"
+			method="updateTcate">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="ky" type="redirect">chaCate.action</result>
 		</action>
 		<!-- 删除大分类 -->
@@ -123,11 +165,17 @@
 		</action>
 
 		<!-- 小分类分页 -->
+<<<<<<< HEAD
 		<action name="chaXiaoCate" class="doCateSecond" method="loginCateSecond">
+=======
+		<action name="chaXiaoCate"
+			class="Scate" method="loginCateSecond">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="chengg">category_modify.jsp</result>
 			<result name="shib">/exception2.jsp</result>
 		</action>
 		<!-- 新增小分类 -->
+<<<<<<< HEAD
 		<action name="queryCate" class="Saddcate">
 			<result name="keyi">categoryxiao_add.jsp</result>
 		</action>
@@ -137,12 +185,31 @@
 		</action>
 
 		<action name="updateScate" class="Supcate" method="updatesScate">
+=======
+		<action name="queryCate"
+			class="Saddcate">
+			<result name="keyi">categoryxiao_add.jsp</result>
+		</action>
+		<!-- 修改小分类 -->
+		<action name="updscate"
+			class="Supcate">
+			<result>editXiao.jsp</result>
+		</action>
+
+		<action name="updateScate"
+			class="Supcate" method="updatesScate">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 			<result name="keyi" type="redirectAction">chaXiaoCate.action</result>
 		</action>
 
 		<!-- 小分类新增 -->
+<<<<<<< HEAD
 		<action name="addScate" class="Saddcate" method="addSmallCate">
+=======
+		<action name="addScate"
+			class="Saddcate" method="addSmallCate">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="success" type="redirectAction">chaXiaoCate.action</result>
 			<result name="file">/exception2.jsp</result>
 		</action>
@@ -155,11 +222,17 @@
 
 
 		<!-- 商品分页 -->
+<<<<<<< HEAD
 		<action name="chaXiaogoods" class="doAction" method="loginGoods">
+=======
+		<action name="chaXiaogoods" class="com.lechenggu.tgoods.action.DoGoods"
+			method="loginGoods">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="chengg">goods_detail_manage.jsp</result>
 			<result name="shib">/exception2.jsp</result>
 		</action>
 		<!-- 添加商品 -->
+<<<<<<< HEAD
 		<action name="addtgoods" class="addAction">
 			<result>goods_detail_modify.jsp</result>
 		</action>
@@ -167,16 +240,31 @@
 			<result name="chenggong" type="dispatcher">smallgoodsCate.jsp</result>
 		</action>
 		<action name="tgs" class="addAction" method="addTgoods">
+=======
+		<action name="addtgoods" class="com.lechenggu.tgoods.action.addgoods">
+			<result>goods_detail_modify.jsp</result>
+		</action>
+		<action name="addtgods" class="com.lechenggu.tgoods.action.addgoods"
+			method="quScaate">
+			<result name="chenggong" type="dispatcher">smallgoodsCate.jsp</result>
+		</action>
+		<action name="tgs" class="com.lechenggu.tgoods.action.addgoods"
+			method="addTgoods">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="keyi" type="redirectAction">chaXiaogoods.action</result>
 			<result name="hehe">goods_detail_modify.jsp</result>
 			<interceptor-ref name="fileUpload">
 				<!-- <param name="savePath">/data</param> -->
 				<param name="maximumSize">52428800</param>
+<<<<<<< HEAD
 
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
 		<!-- 修改商品 -->
+<<<<<<< HEAD
 		<action name="updatequerycate" class="upAction">
 			<result>UpdateTgoods.jsp</result>
 		</action>
@@ -187,16 +275,39 @@
 
 		<!-- 修改商品 -->
 		<action name="upGoods" class="upAction">
+=======
+		<action name="updatequerycate" class="com.lechenggu.tgoods.action.updategoods">
+			<result>UpdateTgoods.jsp</result>
+		</action>
+		<!-- 查询小分类 -->
+		<action name="updateGoods" class="com.lechenggu.tgoods.action.addgoods"
+			method="quScaate">
+			<result name="keyi" type="dispatcher">smallgoodsCate.jsp</result>
+		</action>
+
+		<!-- 修改小分类 -->
+		<action name="upGoods" class="com.lechenggu.tgoods.action.updategoods">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result type="dispatcher">UpdateTgoods.jsp</result>
 		</action>
 
 
 
+<<<<<<< HEAD
 		<action name="updGoodst" class="upAction" method="quScaate">
 			<result name="chenggong">CateGoods.jsp</result>
 		</action>
 
 		<action name="upGoodstt" class="upAction" method="updateTgoods">
+=======
+		<action name="updGoodst" class="com.lechenggu.tgoods.action.updategoods"
+			method="quScaate">
+			<result name="chenggong">CateGoods.jsp</result>
+		</action>
+
+		<action name="upGoodstt" class="com.lechenggu.tgoods.action.updategoods"
+			method="updateTgoods">
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			<result name="hehe" type="redirectAction">chaXiaogoods.action</result>
 			<interceptor-ref name="fileUpload">
 				<!-- <param name="savePath">/data</param> -->
@@ -207,6 +318,7 @@
 
 		<!-- 删除商品 -->
 
+<<<<<<< HEAD
 		<action name="deleTgood" class="delAction">
 			<result type="redirectAction">chaXiaogoods.action</result>
 		</action>
@@ -214,6 +326,15 @@
 		<!-- 公告管理 -->
 		<action name="tannDo" class="tannAction">
 			<result>announcement_manage.jsp</result>
+=======
+		<action name="deleTgood" class="com.lechenggu.tgoods.action.deteleTgoods">
+			<result type="redirectAction">chaXiaogoods.action</result>
+		</action>
+		
+		<!-- 公告管理 -->
+		<action name="tannDo" class="tannAction">
+		<result>announcement_manage.jsp</result>
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		</action>
 
 		<!-- 國際化 -->
@@ -225,6 +346,7 @@
 		<!--<action name= "*User" class="com.houserent.action.UserAction" method="{1}"> 
 			<result>/page/{1}_success.jsp</result> <result name="input">/page/{1}.jsp</result> 
 			<result name="error">/page/error.jsp</result> </action> -->
+<<<<<<< HEAD
 
 		<action name="queryGood" class="sousuo.action.QueryGood">
 			<result>sousuo.jsp</result>
@@ -245,5 +367,18 @@
 </action>
 
 
+=======
+			
+		<action name="queryGood" class="sousuo.action.QueryGood">
+		   <result>sousuo.jsp</result>
+		</action>
+		
+		<action name="deUse" class="sousuo.action.UserAction">
+		<result name="keyi">ceshi.jsp</result>
+		 
+		<result>login.jsp</result>
+		 
+		</action>
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 	</package>
 </struts>

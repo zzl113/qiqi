@@ -4,6 +4,7 @@ import java.util.List;
 
  
 
+<<<<<<< HEAD
 
 
 
@@ -12,13 +13,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 import com.lechenggu.tcategory.entity.Tcategory;
 import com.lechenggu.tcategorysecond.biz.IcateSecondBiz;
 import com.lechenggu.tcategorysecond.biz.impl.IcateSecondBizImpl;
 import com.lechenggu.tcategorysecond.entity.Tcategorysecond;
 import com.opensymphony.xwork2.ActionSupport;
+<<<<<<< HEAD
 @Controller("doCateSecond")//bean的id
 @Scope("prototype")//不表明默认的是单例
+=======
+
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 public class DoCateSecond extends ActionSupport {
 	private List<Tcategorysecond> Cate;
 	public List<Tcategorysecond> getCate() {
@@ -52,11 +59,18 @@ public class DoCateSecond extends ActionSupport {
 		this.page = page;
 	}
 	private int page;
+<<<<<<< HEAD
 	@Autowired
 	private IcateSecondBiz cat;
 	/*public void setCat(IcateSecondBiz cat) {
 		this.cat = cat;
 	}*/
+=======
+	private IcateSecondBiz cat;
+	public void setCat(IcateSecondBiz cat) {
+		this.cat = cat;
+	}
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 	public String loginCateSecond(){
 	 
 			if(page>=1){

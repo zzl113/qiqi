@@ -13,11 +13,14 @@ import java.util.List;
 
 
 
+<<<<<<< HEAD
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 import Util.JdbcUtil;
 
 import com.lechenggu.tcategory.entity.Tcategory;
@@ -29,12 +32,21 @@ import com.lechenggu.tgoods.biz.IgoodsBiz;
 import com.lechenggu.tgoods.biz.impl.IgoodsBizImpl;
 
   
+<<<<<<< HEAD
 @Service
 public class IcateSecondBizImpl implements IcateSecondBiz {
 	@Autowired
 private IcateSecondDao sd;
 	 
  
+=======
+
+public class IcateSecondBizImpl implements IcateSecondBiz {
+private IcateSecondDao sd;
+	public void setSd(IcateSecondDao sd) {
+	this.sd = sd;
+}
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 	@Override
 	public int QueryCateSecond() {
 		 

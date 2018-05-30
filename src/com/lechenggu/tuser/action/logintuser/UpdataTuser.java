@@ -1,15 +1,22 @@
 package com.lechenggu.tuser.action.logintuser;
 
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 import com.lechenggu.tuser.biz.IUserBiz;
 import com.lechenggu.tuser.biz.impl.UserBizImpl;
 import com.lechenggu.tuser.entitys.Tuser;
 import com.opensymphony.xwork2.ActionSupport;
+<<<<<<< HEAD
 @Scope("prototype")
 @Controller("UpuserAction")
+=======
+
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 public class UpdataTuser extends ActionSupport {
 	private int tid;
 	public int getTid() {
@@ -25,7 +32,10 @@ public class UpdataTuser extends ActionSupport {
 		this.user = user;
 	}
 	private Tuser user;
+<<<<<<< HEAD
 	@Autowired
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 	private IUserBiz userBiz;
 public void setUserBiz(IUserBiz userBiz) {
 		this.userBiz = userBiz;

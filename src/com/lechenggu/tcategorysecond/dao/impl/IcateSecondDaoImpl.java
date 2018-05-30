@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
@@ -27,6 +28,24 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 	public int QueryCateSecond() {
 		 
 		 Connection con=getConnection();
+=======
+import Util.JdbcUtil;
+ 
+
+
+ 
+
+import com.lechenggu.tcategory.entity.Tcategory;
+import com.lechenggu.tcategorysecond.dao.IcateSecondDao;
+import com.lechenggu.tcategorysecond.entity.Tcategorysecond;
+
+public class IcateSecondDaoImpl implements IcateSecondDao {
+
+	@Override
+	public int QueryCateSecond() {
+		 
+		 Connection con=JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		 PreparedStatement ps=null;
 		 ResultSet rs=null;
 		 try {
@@ -38,14 +57,22 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 			e.printStackTrace();
 			return 0;
 		}finally{
+<<<<<<< HEAD
 //			JdbcUtil.CloseAll(con, ps, rs);
+=======
+			JdbcUtil.CloseAll(con, ps, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		}
 	}
 
 	@Override
 	public List<Tcategorysecond> querCateSecond(int pgNo, int pgSe) {
 		// 打开连接
+<<<<<<< HEAD
 		Connection con = getConnection();
+=======
+		Connection con = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		PreparedStatement pss = null;
 		ResultSet rs= null;
 
@@ -85,7 +112,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 				return null;
 			} finally {
 
+<<<<<<< HEAD
 //				JdbcUtil.CloseAll(con, pss, rs);
+=======
+				JdbcUtil.CloseAll(con, pss, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 			}
 	}
@@ -93,7 +124,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 	@Override
 	public int addSmallCate(Tcategorysecond cate) {
 		int i = -1;
+<<<<<<< HEAD
 		Connection conn = getConnection();
+=======
+		Connection conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		PreparedStatement ps = null;
 		try {
 			ps = conn.prepareStatement("insert into tcategorysecond (id,catesname,pid,creatuser,creattime,modifyuser,modifytime) values (null,?,?,?,sysdate,?,sysdate)");
@@ -108,7 +143,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 			e.printStackTrace();
 			
 		}finally{
+<<<<<<< HEAD
 //			JdbcUtil.CloseAll(conn, ps, null);	
+=======
+			JdbcUtil.CloseAll(conn, ps, null);	
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 			
 		}
 		return i;
@@ -117,7 +156,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 
 	@Override
 	public Tcategorysecond updateScate(int id) {
+<<<<<<< HEAD
 		Connection conn = getConnection();
+=======
+		Connection conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
@@ -143,7 +186,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 
 	} finally {
 
+<<<<<<< HEAD
 //		JdbcUtil.CloseAll(conn, ps, rs);
+=======
+		JdbcUtil.CloseAll(conn, ps, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 	}
 	return null;
 	}
@@ -151,7 +198,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 	@Override
 	public Tcategorysecond querById(int id) {
 		// 打开连接
+<<<<<<< HEAD
 				Connection conn = getConnection();
+=======
+				Connection conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 				PreparedStatement ps = null;
 				ResultSet rs = null;
 
@@ -184,7 +235,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 
 				} finally {
 
+<<<<<<< HEAD
 //					JdbcUtil.CloseAll(conn, ps, rs);
+=======
+					JdbcUtil.CloseAll(conn, ps, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 				}
 
 				return null;
@@ -194,12 +249,20 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 	public List<Tcategory> queryAllCa() {
 
 		// 打开连接
+<<<<<<< HEAD
 		Connection conn = getConnection();
+=======
+		Connection conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		List<Tcategory> c = new ArrayList<Tcategory>();
 
+<<<<<<< HEAD
 		 
+=======
+		conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		try {
 			ps = conn.prepareStatement("select * from tcategory");
 			rs = ps.executeQuery();
@@ -222,7 +285,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 			return null;
 		} finally {
 
+<<<<<<< HEAD
 //			JdbcUtil.CloseAll(conn, ps, rs);
+=======
+			JdbcUtil.CloseAll(conn, ps, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 		}
 	}
@@ -230,7 +297,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 	@Override
 	public void updateTcategorysecond(Tcategorysecond cate) {
 		// 打开连接
+<<<<<<< HEAD
 				Connection con = getConnection();
+=======
+				Connection con = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 				PreparedStatement pss = null;
 				ResultSet rss = null;
 				try {
@@ -248,7 +319,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 
 				} finally {
 
+<<<<<<< HEAD
 //					JdbcUtil.CloseAll(con, pss, rss);
+=======
+					JdbcUtil.CloseAll(con, pss, rss);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 				}
 
@@ -258,7 +333,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 
 	@Override
 	public void deletSecongCate(int id) {
+<<<<<<< HEAD
 		Connection con = getConnection();
+=======
+		Connection con = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		PreparedStatement pss = null;
 
 		try {
@@ -274,7 +353,11 @@ public class IcateSecondDaoImpl extends BaseDaoImpl implements IcateSecondDao {
 			
 		finally {
 
+<<<<<<< HEAD
 //			JdbcUtil.CloseAll(null, pss, null);
+=======
+			JdbcUtil.CloseAll(null, pss, null);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 		}
 		

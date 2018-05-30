@@ -7,10 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import org.springframework.stereotype.Repository;
 
 import Util.BaseDaoImpl;
  
+=======
+import Util.JdbcUtil;
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 import com.lechenggu.tannouncement.dao.ItannouncementDao;
 import com.lechenggu.tannouncement.entity.Tannouncement;
@@ -18,13 +22,22 @@ import com.lechenggu.tannouncement.entity.Tannouncement;
 
  
  
+<<<<<<< HEAD
 @Repository
 public class ItannouncementDaoImpl extends BaseDaoImpl implements ItannouncementDao {
+=======
+
+public class ItannouncementDaoImpl implements ItannouncementDao {
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 	@Override
 	public List<Tannouncement> QuerAnnouncement() {
 //		打开连接
+<<<<<<< HEAD
 		Connection conn = getConnection();
+=======
+		Connection conn = JdbcUtil.openConnection();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		List<Tannouncement> b = new ArrayList<Tannouncement>();
@@ -55,7 +68,11 @@ public class ItannouncementDaoImpl extends BaseDaoImpl implements Itannouncement
 			return null;
 		} finally {
 
+<<<<<<< HEAD
 //			JdbcUtil.CloseAll(conn, ps, rs);
+=======
+			JdbcUtil.CloseAll(conn, ps, rs);
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 		}
 	}

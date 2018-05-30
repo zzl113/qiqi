@@ -3,9 +3,12 @@ package com.lechenggu.tuser.action.logintuser;
 import java.util.List;
 
 import org.apache.catalina.connector.Request;
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 import com.lechenggu.tuser.biz.IUserBiz;
 import com.lechenggu.tuser.biz.impl.UserBizImpl;
@@ -13,8 +16,12 @@ import com.lechenggu.tuser.entitys.Tuser;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.sun.net.httpserver.Authenticator.Success;
+<<<<<<< HEAD
 @Scope("prototype")
 @Controller("tuserAction")
+=======
+
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 public class TuserAction extends ActionSupport {
  
 	private Tuser user;
@@ -26,7 +33,11 @@ public class TuserAction extends ActionSupport {
 	public void setUser(Tuser user) {
 		this.user = user;
 	}
+<<<<<<< HEAD
 @Autowired
+=======
+
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 	private IUserBiz userBiz;
 
 	public void setUserBiz(IUserBiz userBiz) {

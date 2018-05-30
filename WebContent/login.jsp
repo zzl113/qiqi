@@ -236,7 +236,11 @@ function changPic(){
                         <td>验证码：</td>
                        <td><input type="text" id="idenfitying" name="idenfitying"></td>
                        <td><img id="kaptchaImge" src="kaptcha.jpg"><span id="resuImg"></span></td>
+<<<<<<< HEAD
                         <td>	`
+=======
+                        <td>
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
                         	<img id="kaptchaImge" src="PictureCheckCode" onclick="myReload()" />
                         	<span id="resuImg"></span>
                         </td>
@@ -244,8 +248,12 @@ function changPic(){
 					<tr>
 						<td><s:text name="language"></s:text>:</td>
 						<td><select name="lan" onchange="changeIt()">:
+<<<<<<< HEAD
 								<option value="1"
 									<s:if test="%{lan==1}">selected="selected"</s:if>>中文</option>
+=======
+								<option value="1"<s:if test="%{lan==1}">selected="selected"</s:if>>中文</option>
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 								<option value="2" <s:if test="%{lan==2}">selected="true"</s:if>>英文</option>
 								<option value="3" <s:if test="%{lan==3}">selected="true"</s:if>>繁体中文</option>
 						</select>

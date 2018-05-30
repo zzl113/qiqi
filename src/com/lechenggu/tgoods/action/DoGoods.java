@@ -2,16 +2,23 @@ package com.lechenggu.tgoods.action;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 import com.lechenggu.tgoods.biz.IgoodsBiz;
 import com.lechenggu.tgoods.biz.impl.IgoodsBizImpl;
 import com.lechenggu.tgoods.entity.Tgoods;
 import com.opensymphony.xwork2.ActionSupport;
+<<<<<<< HEAD
 @Scope("prototype")
 @Controller("doAction")
+=======
+
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 public class DoGoods extends ActionSupport {
 	private int page;
 	public int getPage() {
@@ -45,6 +52,7 @@ public class DoGoods extends ActionSupport {
 		this.countyehao = countyehao;
 	}
 	private int countyehao;
+<<<<<<< HEAD
 	public IgoodsBiz getGod() {
 		return god;
 	}
@@ -54,6 +62,9 @@ public class DoGoods extends ActionSupport {
 
 @Autowired
 	private IgoodsBiz god;
+=======
+	private IgoodsBiz god=new IgoodsBizImpl();
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
  public String loginGoods(){
 	 
 	if(page>=1){

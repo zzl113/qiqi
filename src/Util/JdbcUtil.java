@@ -23,7 +23,11 @@ public static Connection openConnection(){
 //		Class.forName("oracle.jdbc.driver.OracleDriver");
 //		//得到获取连接
 //		 
+<<<<<<< HEAD
 //			Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521/lcitdb","c##guimei","123456");
+=======
+//			Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521/zzldb","qiqi","619");
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 //			return conn;
 //		} catch (SQLException e) {
 //			// TODO Auto-generated catch block

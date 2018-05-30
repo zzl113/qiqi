@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd" default-autowire="byType">
+  <bean id="advice" class="service.advice.Myadvice"></bean>
+  <!-- 用户管理 -->
+  <bean id="tuserDao" class="com.lechenggu.tuser.dao.impl.UserDaoImpl" scope="prototype">
+  </bean>
+  
+   <bean id="tuserBiz" class="com.lechenggu.tuser.biz.impl.UserBizImpl" scope="prototype">
+ <!--   <property name="userdao" ref="tuserDao"></property> -->
+  </bean>
+  <!-- 查询用户/新增用户 -->
+  <bean id="tuserAction" class="com.lechenggu.tuser.action.logintuser.TuserAction" scope="prototype">
+ <!--  <property name="userBiz" ref="tuserBiz"></property> -->
+  </bean>
+  
+  <!-- 修改用户 -->
+  <bean id="UpuserAction" class="com.lechenggu.tuser.action.logintuser.UpdataTuser" scope="prototype">
+  
+  </bean>
+  <!-- 删除用户 -->
+  <bean id="deuserAction" class="com.lechenggu.tuser.action.logintuser.DeleteUser" scope="prototype">
+  
+  </bean>
+  <!-- 大分类 -->
+  <bean id="TcateDao" class="com.lechenggu.tcategory.dao.impl.CateDaoImpl" scope="prototype">
+  </bean>
+  <bean id="TcateBiz" class="com.lechenggu.tcategory.biz.impl.CateBizImpl">
+  </bean>
+  <!-- 查询大分类 -->
+  <bean id="TCate" class="com.lechenggu.tcategory.action.DoCategory" scope="prototype">
+  
+  </bean>
+  <!--大分类新增 -->
+  <bean id="TAddCate" class="com.lechenggu.tcategory.action.AddCate" scope="prototype">
+  
+  </bean>
+  <!--修改大分类 -->
+  <bean id="TupCate" class="com.lechenggu.tcategory.action.UpdateCate" scope="prototype">
+  
+  </bean>
+  <!-- 删除大分类 -->
+  <bean id="TdeleCate" class="com.lechenggu.tcategory.action.deleteCate" scope="prototype">
+  
+  </bean>
+  <!-- 小分类 -->
+  <bean id="ScateDao" class="com.lechenggu.tcategorysecond.dao.impl.IcateSecondDaoImpl">
+  
+  </bean>
+  <bean id="ScateBiz" class="com.lechenggu.tcategorysecond.biz.impl.IcateSecondBizImpl">
+  </bean>
+  <!-- 查询小分类 -->
+  <bean id="Scate" class="com.lechenggu.tcategorysecond.action.DoCateSecond">
+  
+  </bean>
+  <!--新增小分类 -->
+  <bean id="Saddcate" class="com.lechenggu.tcategorysecond.action.AddCateSecond">
+  </bean>
+  
+  <!-- 修改小分类 -->
+  <bean id="Supcate" class="com.lechenggu.tcategorysecond.action.updateStcate">
+  </bean>
+  
+  <!-- 删除小分类 -->
+  <bean id="Sdelecate" class="com.lechenggu.tcategorysecond.action.deteScate">
+  </bean>
+  
+  <!-- 公告管理 -->
+  <bean id="tanDao" class="com.lechenggu.tannouncement.dao.impl.ItannouncementDaoImpl">
+  
+  </bean>
+  <bean id="tannBiz" class="com.lechenggu.tannouncement.biz.impl.ItannouncementBizImpl">
+  <property name="tanndao" ref="tanDao"></property>
+  </bean>
+  <bean id="tannAction" class="com.lechenggu.tannouncement.action.DoTannouncement">
+  <property name="tanb" ref="tannBiz"></property>
+  </bean>
+  
+  
+  <aop:config>
+ <aop:aspect ref="advice">
+ <aop:pointcut expression="execution(* com.lechenggu.tuser.biz.impl.*.*(..))" id="qiedian"/>
+ <aop:before method="hehe" pointcut-ref="qiedian"/>
+ <aop:after method="haha" pointcut-ref="qiedian"/>
+ <aop:around method="heihei" pointcut-ref="qiedian"/>
+ 
+ </aop:aspect>
+ 
+</aop:config>
+</beans>

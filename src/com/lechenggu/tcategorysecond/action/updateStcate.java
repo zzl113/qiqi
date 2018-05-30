@@ -3,11 +3,14 @@ package com.lechenggu.tcategorysecond.action;
  
 import java.util.List;
 
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
  
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 import com.lechenggu.tcategory.biz.IcategoryBiz;
 import com.lechenggu.tcategory.biz.impl.CateBizImpl;
 import com.lechenggu.tcategory.entity.Tcategory;
@@ -18,8 +21,11 @@ import com.lechenggu.tuser.entitys.Tuser;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+<<<<<<< HEAD
 @Scope("prototype")//不表明默认的是单例
 @Controller("Supcate")//bean的id
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 public class updateStcate extends ActionSupport {
 private int id;
 public int getId() {
@@ -49,7 +55,10 @@ public List<Tcategory> getCate() {
 public void setCate(List<Tcategory> cate) {
 	Cate = cate;
 }
+<<<<<<< HEAD
 @Autowired
+=======
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 private IcateSecondBiz catd;
  
 	@Override

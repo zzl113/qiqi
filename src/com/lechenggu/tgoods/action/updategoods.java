@@ -10,12 +10,16 @@ import java.util.List;
 
 
 
+<<<<<<< HEAD
 
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+=======
+import org.apache.struts2.ServletActionContext;
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 
 import com.lechenggu.tcategory.entity.Tcategory;
 import com.lechenggu.tcategorysecond.entity.Tcategorysecond;
@@ -29,8 +33,12 @@ import com.opensymphony.xwork2.ActionSupport;
  
 
  
+<<<<<<< HEAD
 @Scope("prototype")
 @Controller("upAction")
+=======
+
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 public class updategoods extends ActionSupport {
 private Tgoods gd;
 private List<Tcategory> tg;
@@ -90,6 +98,7 @@ public void setId(int id) {
 	this.id = id;
 }
 //private List<Tcategorysecond> scate;
+<<<<<<< HEAD
 @Autowired
 private IgoodsBiz god;
 
@@ -100,6 +109,12 @@ public void setGod(IgoodsBiz god) {
 	this.god = god;
 }
 @Override
+=======
+
+private IgoodsBiz god=new IgoodsBizImpl();
+
+ @Override
+>>>>>>> f287f93b8f1d0f9e14a942804a73323837f6ccac
 	public String execute() throws Exception {
 		 gd=god.queryGoods(id);
 		tg=god.queryAllcategory();
