@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-20 13:42:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="pojo.Tgoods" table="TGOODS">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="38" scale="0" />
+           <generator class="sequence" >
+            <param name="sequence">SEQ_TGOODS</param>
+            </generator>
+        </id>
+        <many-to-one name="tuserByCreatuser" class="pojo.Tuser" fetch="select">
+            <column name="CREATUSER" precision="38" scale="0" />
+        </many-to-one>
+        <many-to-one name="tuserByModifyuser" class="pojo.Tuser" fetch="select">
+            <column name="MODIFYUSER" precision="38" scale="0" />
+        </many-to-one>
+        <many-to-one name="tcategorysecond" class="pojo.Tcategorysecond" fetch="select">
+            <column name="CATESECID" precision="38" scale="0" />
+        </many-to-one>
+        <property name="goodsname" type="string">
+            <column name="GOODSNAME" length="50" />
+        </property>
+        <property name="price" type="java.lang.Long">
+            <column name="PRICE" precision="10" scale="4" />
+        </property>
+        <property name="sucount" type="java.lang.Long">
+            <column name="SUCOUNT" precision="38" scale="0" />
+        </property>
+        <property name="transprice" type="java.lang.Long">
+            <column name="TRANSPRICE" precision="38" scale="0" />
+        </property>
+        <property name="remaintime" type="string">
+            <column name="REMAINTIME" length="30" />
+        </property>
+        <property name="salecount" type="java.lang.Long">
+            <column name="SALECOUNT" precision="38" scale="0" />
+        </property>
+        <property name="sumsalecount" type="java.lang.Long">
+            <column name="SUMSALECOUNT" precision="38" scale="0" />
+        </property>
+        <property name="goodsqutity" type="string">
+            <column name="GOODSQUTITY" length="30" />
+        </property>
+        <property name="belongto" type="string">
+            <column name="BELONGTO" length="100" />
+        </property>
+        <property name="hitcount" type="java.lang.Long">
+            <column name="HITCOUNT" precision="38" scale="0" />
+        </property>
+        <property name="gdescribe" type="string">
+            <column name="GDESCRIBE" length="200" />
+        </property>
+        <property name="istop" type="java.lang.Long">
+            <column name="ISTOP" precision="38" scale="0" />
+        </property>
+        <property name="creattime" type="timestamp">
+            <column name="CREATTIME" length="7" />
+        </property>
+        <property name="modifytime" type="timestamp">
+            <column name="MODIFYTIME" length="7" />
+        </property>
+        <property name="spic" type="string">
+            <column name="SPIC" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>
